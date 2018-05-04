@@ -113,7 +113,7 @@ class Train
   end
  
   def valid?
-    self.errors << "Номер имеет неправильный формат" if train_number !~ NUMBER_FORMAT
+    self.errors << "Номер имеет неправильный формат" unless train_number =~ NUMBER_FORMAT
   
     self.errors.size.zero?
   end

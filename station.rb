@@ -11,8 +11,8 @@ class Station
   
   def initialize(name)
     @name = name
-    @trains = []
     validate!
+    @trains = []
     @@stations << self
     register_instance
   end
@@ -36,10 +36,9 @@ class Station
   private
   
   def valid?
-    errors << "Введена пустая строка" if name.empty? || name.nil?
+    errors << "Введена пустая строка" if name.nil? || name.strip.size.zero?
     errors << "Имя станции слишком длинное. Максимальное количество символов - 20" if name.length > 20
   
     errors.size.zero?
   end
-
 end

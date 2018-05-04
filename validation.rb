@@ -4,8 +4,6 @@ module Validation
   
   private
   
-  attr_writer :errors
-  
   def validate!
     @errors = []
     raise errors.join(',') unless valid?
